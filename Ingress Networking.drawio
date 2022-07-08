@@ -1,1 +1,48 @@
-<mxfile host="app.diagrams.net" modified="2022-07-07T18:09:23.991Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" version="20.0.4" etag="ESJip6G1KyAll0NWRzBV" type="github"><diagram id="fvY_wyvFeCwaEVzINaOC">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-07-08T04:50:25.992Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="aufLBYgfYZRg9o_iJrIa" version="20.0.4" type="github">
+  <diagram id="fvY_wyvFeCwaEVzINaOC" name="Page-1">
+    <mxGraphModel dx="1042" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-17" value="k3s cluster" style="rounded=0;whiteSpace=wrap;html=1;labelBorderColor=none;strokeColor=#666666;fillColor=none;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;gradientColor=#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="300" y="120" width="500" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-4" value="k3d wrapper" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="250" y="60" width="570" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-9" value="If TLS is enabled, &lt;br&gt;forward to port 8443" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="5q0pZ2R-PP4R7r6_sVFo-2" target="5q0pZ2R-PP4R7r6_sVFo-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-11" value="If TLS is disabled,&lt;br&gt;forward to port 8080" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="5q0pZ2R-PP4R7r6_sVFo-2" target="5q0pZ2R-PP4R7r6_sVFo-7">
+          <mxGeometry x="0.2667" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="420" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-2" value="Ingress Controller&lt;br&gt;(Traefik)&lt;br&gt;[Port 80, 443]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-13" value="&lt;p&gt;connect instances&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=default;fillColor=none;dashed=1;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;spacing=-10;" vertex="1" parent="1">
+          <mxGeometry x="600" y="190" width="170" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-10" value="TLS terminated: &lt;br&gt;Port 8443 forwards to port 8080" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5q0pZ2R-PP4R7r6_sVFo-6" target="5q0pZ2R-PP4R7r6_sVFo-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-6" value="TLS Sidecar&lt;br&gt;(Nginx Reverse Proxy)&lt;br&gt;[Port 8443]" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;gradientColor=#97d077;" vertex="1" parent="1">
+          <mxGeometry x="620" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-7" value="cim-webapp&lt;br&gt;[Port 8080]" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5q0pZ2R-PP4R7r6_sVFo-15" target="5q0pZ2R-PP4R7r6_sVFo-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5q0pZ2R-PP4R7r6_sVFo-15" value="Host Machine&lt;br&gt;[Port 8080]" style="rounded=0;whiteSpace=wrap;html=1;labelBorderColor=none;strokeColor=#d6b656;fillColor=#fff2cc;gradientColor=#ffd966;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
